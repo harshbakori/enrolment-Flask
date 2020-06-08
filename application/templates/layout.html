@@ -15,6 +15,16 @@
     
     {% include "includes/nav.html" %}
 
+    {% with messeages = get_flashed_messages(with_categories=true) %}
+        {%if messeages%}
+            {%for catagoriy,message in messeages%}
+                <div class="alert alert-{{catagoriy}}">
+                    <p>{{message}}</p>
+                </div>
+            {%endfor%}
+        {%endif%}
+    {% endwith %}
+
 {% block content %}
 {% endblock %}
 
