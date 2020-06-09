@@ -19,8 +19,8 @@ def login():
         if request.form.get("email")=="test@gmail.com":
             flash("Congratulations... You are loged in !","success")
             return redirect("/index")
-    else:
-        flash("Something went wrong..!!! Login Again","danger")
+        else:
+            flash("Something went wrong..!!! Login Again","danger")
         
     return render_template("login.html",title="login",form=form, login=True )
 
